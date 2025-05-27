@@ -1,0 +1,113 @@
+
+@import '../../styles/variables.scss';  
+
+.BillingInfo {
+  background-color: $white;
+  max-width: 850px;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .billing-heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: $text-primary;
+    margin-bottom: 8px;
+  }
+
+  .billing-paragraph {
+    color: $text-secondary;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .formStep {
+    color: $text-secondary;
+    font-size: 14px;
+    text-align: right;
+    margin-bottom: 16px;
+  }
+
+  .formGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+
+    .InputComponent {
+      width: 100%;
+    }
+  }
+
+  .errorMessage {
+    color: $clr-deep-blue;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .newInput{
+    background-color: #F6F7F9;
+  }
+}
+
+/* Responsive Tasarım */
+
+@media (max-width: $tablet-l) {
+  .BillingInfo {
+    padding: 15px;
+  }
+  .formGroup {
+    grid-template-columns: 1fr; 
+    gap: 15px; 
+  }
+  .billing-heading {
+    font-size: 18px;  
+  }
+  .billing-paragraph {
+    font-size: 12px;  
+  }
+  .formStep {
+    font-size: 12px;  
+  }
+}
+
+
+@media (max-width: $mobile-l) {
+  .BillingInfo {
+    padding: 10px;  
+  }
+  .billing-heading {
+    font-size: 16px;  
+  }
+  .billing-paragraph {
+    font-size: 11px;  
+  }
+  .formStep {
+    font-size: 10px;  
+  }
+  .formGroup {
+    grid-template-columns: 1fr;  
+    gap: 10px;
+  }
+}
+
+@media (max-width: $mobile-m) {
+  .BillingInfo {
+    padding: 8px;  
+  }
+  .billing-heading {
+    font-size: 14px;  
+  }
+  .billing-paragraph {
+    font-size: 10px;  
+  }
+  .formStep {
+    font-size: 9px; 
+  }
+  .formGroup {
+    grid-template-columns: 1fr; 
+    gap: 8px;
+  }
+}

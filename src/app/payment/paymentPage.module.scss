@@ -1,0 +1,30 @@
+@use '../../styles/variables.scss' as var;
+@use '../../styles/mixins.scss' as mixin;
+
+.paymentSection{
+    display: flex;
+    gap: 80px;
+    margin: 25px;
+    justify-content: center;
+
+    .paymentDiv{
+        width: 100%;
+        max-width: 850px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+}
+
+@include  mixin.max(var.$tablet-l){
+    @media (max-width: var.$tablet-l) {
+    .paymentSection{
+      flex-direction: column;
+      gap: 20px;
+    }
+    .rentalInfoDiv{
+      order: -1;
+    }
+  }
+}

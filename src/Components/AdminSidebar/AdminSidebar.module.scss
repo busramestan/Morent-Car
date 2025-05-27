@@ -1,0 +1,210 @@
+@use "../../styles/variables.scss" as *;
+
+.sidebar {
+  width: 17em; 
+  height: 100%;
+  background-color: $white;
+  padding: 3em 1.5em; 
+  box-shadow: 0 2px 5px $border-gray;
+  display: flex;
+  flex-direction: column;
+  gap: 6em;
+  transition: transform 0.3s ease;
+  transform: translateX(0);
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  .menuTitle {
+    font-size: 12px; 
+    color: rgba(148, 167, 203, 0.4);
+    margin-bottom: 1em;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+  }
+
+  .menuList {
+    list-style: none;
+    padding: 0;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 1em 0; 
+      color: $text-secondary;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      padding-left: 1em; 
+
+      &:hover {
+        color: $black;
+      }
+
+      .menuIcon {
+        width: 1.5em; 
+        height: 1.5em; 
+        margin-right: 1.2em; 
+      }
+
+      > a {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .active {
+      background-color: $clr-blue;
+      color: $white;
+      border-radius: 0.5em; 
+    }
+  }
+
+  .switch {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+  }
+
+  .toggleInput {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+  
+    &:checked + .toggleLabel {
+      background: $text-primary;
+    }
+  
+    &:checked + .toggleLabel::after {
+      left: 4.2em; 
+      transform: translateX(-100%);
+      background: linear-gradient(120deg, $border-gray, $text-primary);
+    }
+  
+    &:checked + .toggleLabel .sun {
+      fill: $border-gray;
+    }
+  
+    &:checked + .toggleLabel .moon {
+      fill: $white;
+    }
+  }
+  
+  .toggleLabel {
+    width: 4.2em; 
+    height: 2.1em;
+    position: relative;
+    display: block;
+    background: #e0e0e0;
+    border-radius: 2em; 
+    box-shadow: inset 0 0.1em 0.1em rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: 0.3s;
+  
+    &::after {
+      position: absolute;
+      content: "";
+      height: 2em; 
+      width: 2em; 
+      left: 0.1em; 
+      background: $clr-blue;
+      border-radius: 2em; 
+      box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2); 
+      transition: 0.3s;
+    }
+  
+    &:active::after {
+      width: 2em;
+    }
+  
+    >svg {
+      position: absolute;
+      width: 1.1em;
+      top: 0.5em; 
+      z-index: 100;
+    }
+  
+    .sun {
+      left: 0.5em; 
+      fill: $white;
+      transition: 0.3s;
+    }
+  
+    .moon {
+      left: 2.6em; 
+      fill: $white;
+      transition: 0.3s;
+    }
+  }
+
+  .logout {
+    display: flex;
+    align-items: center;
+    padding: 1em 0; 
+    color: $text-secondary;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding-left: 1em; 
+
+    &:hover {
+      color: $text-primary;
+    }
+
+    .logoutIcon {
+      width: 1.5em; 
+      height: 1.5em; 
+      margin-right: 1.2em; 
+    }
+  }
+}
+
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 24px;
+  z-index: 1000;
+  cursor: pointer;
+  color: $clr-blue-gray;
+
+  @media(max-width: $tablet-s) {
+    display: block;
+  }
+}
+
+@media(max-width: $desktop-s) {
+  .sidebar{
+    font-size: 14px;
+  }
+}
+
+@media(max-width: $tablet-l) {
+  .sidebar{
+    width: 16em;
+  }
+}
+
+@media(max-width: $tablet-m) {
+  .sidebar{
+    width: 14em;
+
+    .switch {
+      margin-left: 0;
+    }
+  }
+}
+
+@media(max-width: $tablet-s) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 999;
+    font-size: 12px;
+    padding: 7em 1.5em;
+    width: 16em;
+  }
+}

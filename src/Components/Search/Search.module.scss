@@ -1,0 +1,91 @@
+@use "../../styles/variables.scss" as *;
+@use "../../styles/mixins.scss" as *;
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.searchBar {
+  display: flex;
+  border: 1px solid $border-gray;
+  border-radius: 40px;
+  padding: 7px 20px;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s;
+
+  &:focus-within {
+    border: 1px solid $clr-blue;
+    scale: 1.03;
+    background-color: #3562e90c;
+  }
+
+  .searchBarLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    input {
+      outline: none;
+      padding: 5px;
+      color: $clr-blue-gray;
+      font-size: 13px;
+      width: 350px;
+    }
+  }
+
+  .searchIcon,
+  .filterIcon {
+    background: none;
+    border: none;
+    color: $clr-blue-gray;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+
+    &:hover {
+      color: $clr-blue;
+    }
+  }
+}
+@include max($tablet-l) {
+  .searchBar .searchBarLeft input {
+    width: 240px;
+  }
+}
+
+
+@include max($tablet-m) {
+  .searchBar .searchBarLeft input {
+    width: 170px;
+  }
+}
+
+@include max($mobile-l) {
+  .searchBar {
+    border-radius: 10px;
+  }
+
+  .filterIconMobile {
+    border: 1px solid $border-gray;
+    border-radius: 10px;
+    padding: 8.5px 12px;
+    background: none;
+    color: $clr-blue-gray;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+
+    &:focus-within {
+      border: 1px solid $clr-blue;
+      scale: 1.03;
+      background-color: #3562e90c;
+    }
+
+    &:hover {
+      color: $clr-blue;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@use '../../../styles/variables.scss' as var; 
+@use '../../../styles/mixins.scss' as mixin;
+
+.pickerDiv{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: relative;
+
+    .btnImage{
+        border: none;
+        background-color: var.$white;
+        margin: 2px;
+        display: flex;
+        gap: 15px;
+        max-width: 850px;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .pickerHeader{
+        font-size: 16px;
+        font-weight: 700;
+        color: var.$text-primary;
+    }
+
+    .labelDiv{
+        display: flex;
+        gap: 8px;
+
+      .pickerLabel{
+        color: var.$text-secondary;
+        font-size: 12px;
+        font-weight: 400;
+        }
+    }
+    
+    .arrowDown{
+        transition: transform 0.01s ease-in;
+    } 
+    .arrowDown.open{
+        transform: rotate(180deg);
+    }
+}
+
+
+.disabled {
+  cursor: no-drop;
+  opacity: 1;
+  border: none;
+  background-color: var.$white;
+  max-width: 150px;
+  margin: 2px;
+}
+

@@ -1,0 +1,156 @@
+@use '../../styles/variables.scss' as vars;
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.reviewCardStatus {
+  display: flex;
+  gap: 1.125rem;
+  width: 100%;
+}
+
+.status {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profilePic {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.nameJob {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.name {
+  color: #1a202c;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: -0.6px;
+}
+
+.job {
+  color: #90a3bf;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; 
+  letter-spacing: -0.28px;
+}
+
+.date {
+  color: #90a3bf;
+  text-align: right;
+
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: -0.28px;
+}
+
+.review {
+  color: #596780;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%; 
+  letter-spacing: -0.28px;
+  gap: 5rem;
+}
+
+.review{
+  padding-top: 0.5rem;
+}
+
+.ratingDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+  .rating {
+    display: flex;
+    gap: 5px;
+  }
+  i {
+    color: gold;
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .profilePic {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .name {
+    font-size: 0.875rem;
+  }
+
+  .job {
+    font-size: 0.75rem;
+  }
+
+  .review {
+    font-size: 0.8125rem;
+    -webkit-line-clamp: 3; 
+  }
+  .rating i {
+    font-size: 0.8rem; 
+  }
+  .date{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .profilePic {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .name {
+    font-size: 0.75rem;
+  }
+
+  .job {
+    font-size: 0.625rem;
+  }
+
+  .review {
+    font-size: 0.6875rem;
+    -webkit-line-clamp: 2; 
+  }
+  .date{
+    font-size: 10px;
+  }
+
+  .rating i {
+    font-size: 0.6rem; 
+  }
+
+ 
+}
+
+@media (max-width: 360px) {
+  .rating i{
+    font-size: 0.5rem;
+  }
+}
+

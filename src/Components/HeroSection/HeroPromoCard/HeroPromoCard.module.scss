@@ -1,0 +1,117 @@
+@use '../../../styles/variables' as vars;
+
+.card {
+    border-radius: 10px;
+    width: 840px;
+    height: 460px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-left: 30px;
+        margin-top: 40px;
+    }
+
+    .title {
+        margin-bottom: 5px;
+        color: vars.$white;
+        line-height: 50px;
+        font-size: 32px;
+        font-weight: 600;
+        }
+
+    .textBreak {
+        width: 300px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
+    .desc {
+        color:vars.$white;
+        line-height: 30px;
+    }
+    .carModel {
+        margin: 0 auto;
+        margin-bottom: 15px;
+    }
+
+}
+
+.bgImg{
+    background-size:cover ;
+    background-position: center;
+}
+
+//RESPONSIVENESS
+
+@media (max-width: vars.$desktop-xl) {
+    .card {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: vars.$tablet-l) {
+    .card {
+        width: 400px;
+        height: 460px;
+        margin: 10px;    
+    }
+    .carModel {
+        width: 70%;
+    }
+
+}
+
+@media (max-width: vars.$tablet-m) {
+    .card {
+        width: 100%;
+    }
+    .title {
+        margin-bottom: 5px;
+        color: vars.$white;
+        font-size: 28px;
+        font-weight: 600;
+    }
+    .textBreak {
+        width: 100%;
+    }
+}
+
+@media (max-width: vars.$tablet-s) {
+    .card {
+        width: 100%;
+    }
+    .title {
+        font-size: 22px;
+        }        
+    .content {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+    .textBreak {
+        width: 100%;
+    }
+    .card:nth-child(even) {
+        display: none;
+}
+}
+
+@media (max-width: vars.$mobile-l) {
+    .card {
+        width: 500px;
+    .title {
+            font-size: 26px;
+        }
+    .textBreak {
+            width: 100%;
+        }
+    }
+    .card:nth-child(even) {
+        display: none;
+    }  
+}

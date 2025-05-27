@@ -1,0 +1,37 @@
+
+
+@import '../../../../styles/variables.scss';
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%; 
+
+  label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: $text-primary;
+  }
+
+  input {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid $white;
+    font-size: 12px;
+    background-color: $white;
+    outline: none;
+    max-width: 360px;
+
+    &:focus {
+      border-color:$clr-blue;
+    }
+  }
+
+  .errorMessage {
+    color: $clr-deep-blue;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+}

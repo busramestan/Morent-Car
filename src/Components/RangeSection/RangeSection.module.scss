@@ -1,0 +1,35 @@
+@use '../../styles/variables.scss' as var;
+@use '../../styles/mixins.scss' as mixin;
+
+.rangePickerDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin: 14px 0;
+}
+
+  //RESPONSİVENESS
+  @include  mixin.max(var.$desktop-l){
+    @media (max-width: var.$desktop-l) {
+      .rangePickerDiv{
+      gap: 20px;
+    }
+  }
+}
+  @include  mixin.max(var.$desktop-s){
+    @media (max-width: var.$desktop-s) {
+      .rangePickerDiv{
+        position: relative;
+        margin: 10px;
+      }
+    }
+  }
+  @include  mixin.max(var.$tablet-m){
+    @media (max-width: var.$tablet-m) {
+      .rangePickerDiv{
+        flex-direction: column;
+        margin: 10px;
+      }
+    }
+  }

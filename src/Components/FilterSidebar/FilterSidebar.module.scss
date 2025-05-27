@@ -1,0 +1,141 @@
+@import '../../styles/variables.scss';
+
+.sidebar {
+  padding: 16px;
+  border: 1px solid $border-gray;
+  background-color: $white;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+.filterGroup {
+  margin-bottom: 26px;
+}
+
+.filterGroup h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: $text-secondary;
+}
+
+.filterItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: $clr-blue-gray;
+
+  span {
+    color: $clr-blue-gray;
+    margin-left: 4px;
+  }
+}
+
+.filterItem input {
+  margin-right: 8px;
+}
+
+.priceRangeWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+}
+
+.priceRange {
+  width: 100%;
+  max-width: 200px;
+  background-color: $clr-light-blue;
+  border: 1px solid $border-gray;
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.priceInfo {
+  font-size: 14px;
+  color: $clr-blue-gray;
+  margin-top: 8px;
+  text-align: left;  
+  padding-left: 8px; 
+}
+
+.page {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.productsWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: calc(100% - 250px);
+  margin-left: 16px;
+}
+
+.productCard {
+  border: 1px solid $border-gray;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: $white;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .productImage {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    object-fit: cover;
+  }
+
+  .productInfo {
+    font-size: 14px;
+    color: $clr-blue-gray;
+  }
+}
+
+.noResults {
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.suggestedContainer {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.suggestedTitle {
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.suggestedContainer + .noResults {
+  margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .productsWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .productsWrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .page {
+    flex-direction: column;
+  }
+}   

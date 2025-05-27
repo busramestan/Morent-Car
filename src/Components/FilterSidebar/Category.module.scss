@@ -1,0 +1,40 @@
+// Category.module.scss
+
+.categoryContainer {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .productsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    flex: 1;
+  }
+  
+  .noResults {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+  }
+  
+  .suggestedContainer {
+    margin-top: 16px;
+  }
+  
+  .suggestedTitle {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .suggestedProductsWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  
+  .productCardWrapper {
+    width: 100%;
+  }
+  

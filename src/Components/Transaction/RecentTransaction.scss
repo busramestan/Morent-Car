@@ -1,0 +1,175 @@
+@use "../../styles/variables.scss" as *;
+
+.recent-transactions {
+  width: 100%;
+  max-width: 524px;
+  padding: 40px;
+  border-radius: 8px;
+  overflow-y: auto;
+  background-color: $white;
+
+  .recent-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: $black;
+      margin: 0;
+    }
+
+    .view-all {
+      font-size: 14px;
+      font-weight: 500;
+      color: $clr-blue;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      background: none;
+
+      &:hover {
+        color: $clr-deep-blue;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid $border-gray;
+
+    img {
+      width: 60px;
+      height: auto;
+      margin-right: 15px;
+    }
+
+    .recent-details {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+
+      h4 {
+        font-size: 16px;
+        font-weight: 700;
+        color: $black;
+        margin: 0;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+        color: $text-secondary;
+        margin: 5px 0 0;
+      }
+    }
+
+    .right-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .info-date {
+        font-size: 12px;
+        font-weight: 500;
+        color: $text-secondary;
+        margin-bottom: 5px;
+      }
+
+      .info-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: $text-primary;
+      }
+    }
+  }
+}
+@media(max-width: $desktop-l) {
+  .recent-transactions {
+      max-width: 650px;
+  }
+}
+@media(max-width: $tablet-l) {
+  .recent-transactions {
+      max-width: 480px;
+  }
+}
+@media (max-width: $tablet-m) {
+  .recent-transactions {
+    width: 380px;
+    padding: 20px;
+    font-size: 16px;
+    a .transaction-item {
+      img {
+        width: 50px;
+      }
+
+      .recent-details {
+        h4 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .right-info {
+        .info-date {
+          font-size: 14px;
+        }
+
+        .info-price {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: $mobile-m) {
+  .recent-transactions {
+    width: 100%;
+    max-width: 320px;
+    height: 352px;
+    padding: 15px;
+
+    .transaction-item {
+      flex-direction: column;
+      align-items: flex-start;
+
+      img {
+        width: 40px;
+        margin-bottom: 10px;
+      }
+
+      .recent-details {
+        h4 {
+          font-size: 16px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .right-info {
+        align-items: flex-start;
+
+        .info-date {
+          font-size: 14px;
+        }
+
+        .info-price {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

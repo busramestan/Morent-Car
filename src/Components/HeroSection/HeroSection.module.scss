@@ -1,0 +1,44 @@
+@use '../../styles/variables.scss' as vars;
+
+.cardsContainer{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.bgBlue {
+    background-color: vars.$clr-blue!important;
+}
+.bgLightBlue {
+    background-color: vars.$clr-light-blue!important;
+}
+.btnBlue {
+    background-color: vars.$clr-blue!important;
+}
+.btnLightBlue {
+    background-color: vars.$clr-light-blue!important;
+}
+
+//RESPONSIVENESS
+
+@media (max-width: vars.$desktop-m) {
+    .cardsContainer{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media (max-width: vars.$tablet-l) {
+    .cardsContainer{
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (max-width: vars.$tablet-m) {
+    .cardsContainer{
+        display: flex;
+        gap: 2px;
+    }
+}

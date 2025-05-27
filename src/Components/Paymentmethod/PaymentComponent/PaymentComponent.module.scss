@@ -1,0 +1,72 @@
+
+@import '../../../styles/variables.scss';
+
+.paymentOptionDiv {
+  background-color: $clr-light-gray;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .labelDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .label {
+      font-size: 13px;
+      font-weight: 600;
+      color: $text-primary;
+      margin-left: 5px;
+    }
+  }
+
+  .paymentInputContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .CreditCard  {
+    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .InputComponent {
+      width: 100%;
+    }
+  }
+
+  .PayPal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    .InputComponent:nth-child(3) {
+      grid-column: span 2; 
+    }
+    .InputComponent {
+      width: 100%;
+    }
+  }
+
+  .Bitcoin {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    .InputComponent {
+      flex: 1;
+    }
+  }
+
+  @media (max-width: $tablet-m) {
+    .CreditCard,
+    .PayPal,
+    .Bitcoin {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+

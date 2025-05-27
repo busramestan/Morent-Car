@@ -1,0 +1,117 @@
+@use '../../../styles/variables.scss' as var;
+@use '../../../styles/mixins.scss' as mixin;
+
+.timePickerContainer {
+  position: absolute;
+  width: 180px;
+  background-color: var.$white;
+  box-shadow: 0px 4px 6px #3562e942;
+  border-radius: 10px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: 50px;
+  right: 10px;
+  left: 20px;
+  z-index: 2;
+}
+
+.timeSelectDiv {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollContainer {
+  height: 100px; 
+  overflow-y: auto; 
+}
+
+.scrollContainer::-webkit-scrollbar {
+  display: none; 
+}
+
+.scroll {
+  max-width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; 
+}
+
+.scrollItem {
+  font-size: 16px; 
+  text-align: center;
+  color: var.$text-secondary;
+  cursor: pointer;
+  opacity: 0.4;
+  transition: all 0.1s ease-in;
+}
+
+.scrollItem:hover {
+  opacity: 0.8;
+}
+
+.selected {
+  width: 50px;
+  font-size: 18px; 
+  font-weight: bold;
+  color: #3562e9e8;
+  opacity: 1;
+  transform: scale(1.2); 
+}
+
+.separator {
+  margin: 0 8px;
+  font-size: 24px; 
+  font-weight: bold;
+  color: var.$text-primary;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.okButton {
+  background-color: var.$white;
+  color: var.$clr-blue;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.okButton:hover {
+  background-color: var.$clr-blue;
+  color: var.$white;
+}
+
+.timeLabel {
+  font-size: 14px;
+  color: var.$clr-blue-gray;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+  //RESPONSİVENESS
+  @include  mixin.max(var.$desktop-l){
+    @media (max-width: var.$desktop-l) {
+      .timePickerContainer {
+        left: 0px;
+        transform: translateX(-30%); 
+      }
+  }
+}
+  @include  mixin.max(var.$desktop-s){
+    @media (max-width: var.$desktop-s) {
+      .timePickerContainer {
+        transform: translateX(-70%); 
+      }
+  }
+}

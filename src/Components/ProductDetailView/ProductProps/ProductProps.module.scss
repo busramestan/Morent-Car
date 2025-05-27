@@ -1,0 +1,180 @@
+@use '../../../styles/variables.scss' as vars;
+@use '../../../styles/mixins.scss' as mixins;
+
+.detailCardStyle {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: vars.$white;
+  border-radius: 10px;
+  padding: 20px;
+
+  .detailHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}
+
+.detailContent{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+    .descStyle {
+      width: 380px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color: vars.$clr-blue-gray;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+    
+    .propsContent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      gap: 30px; 
+    }
+    
+}
+
+.propsDivStyle {
+  display: flex;
+  justify-content: space-between;
+  color: vars.$text-secondary;
+
+  span {
+    color: vars.$clr-blue-gray;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  span {
+    color: vars.$clr-blue-gray;
+    font-size: 12px;
+  }
+  i {
+    color: gold;
+  }
+}
+.subContent {
+  display: flex;
+  justify-content: space-between;
+
+  .priceContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price {
+    font-weight: 700;
+    font-size: 28px;
+  }
+  .delStyle {
+    font-size: 15px;
+    color: vars.$text-secondary;
+    font-weight: 700;
+
+  }
+  .btnStyle {
+    padding: 12px;
+  }
+}
+
+@include mixins.max(vars.$tablet-l) {
+
+  .detailCardStyle {
+    width: 570px;
+
+    .descStyle {
+      width: 450px;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      color: vars.$clr-blue-gray;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 40px;
+    }
+
+    .propsContent {
+      gap: 20px;
+    }
+  }
+
+  .propsDivStyle {
+  justify-content: left;
+  gap: 30px;
+  }
+
+}
+
+//RESPONSİVENESS
+
+  @include mixins.max (vars.$tablet-s) {
+    .detailCardStyle {
+      width: 450px;
+
+      .descStyle {
+        width: 350px;
+    }
+      .propsContent  {
+        gap: 20px;
+      }
+  }
+    .propsDivStyle {
+      justify-content: left;
+      gap: 30px;
+      }
+
+  }
+
+  @include mixins.max (vars.$mobile-l) {
+    .detailCardStyle {
+      width: 400px;
+
+      .descStyle {
+        width: 340px;
+    }
+    .propsContent  {
+      gap: 20px;
+    }
+  }
+    .propsDivStyle {
+      justify-content: left;
+      gap: 30px;
+      }
+
+  }
+
+  @include mixins.max( vars.$mobile-m) {
+
+  .detailCardStyle {
+    width: 320px;
+
+    .descStyle {
+      width: 290px;
+    }
+    .propsContent  {
+      gap: 10px;
+    }
+  }
+  .propsDivStyle {
+    justify-content: left;
+    gap: 10px;
+    }
+}

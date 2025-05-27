@@ -1,0 +1,160 @@
+@use '../../styles/variables.scss' as *;
+@use '../../styles/mixins.scss' as *;
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  align-items: center;
+  padding: 30px;
+  background-color: $white;
+  border-bottom: 1px solid $border-gray;
+
+  .logoWrapper {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      font-size: 27px;
+      color: $clr-blue;
+      cursor: pointer;
+    }
+  }
+
+  .searchWrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: flex-end;
+
+    .iconButton {
+      background: none;
+      position: relative;
+      color: $clr-blue-gray;
+      font-size: 18px;
+      cursor: pointer;
+      border: 1px solid $border-gray;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      transition: 0.3s;
+
+      &:hover {
+        background-color: $text-secondary;
+      }
+
+      .notification {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #ff4423;
+        border-radius: 50%;
+        padding: 6px;
+      }
+    }
+
+    .profileImageWrapper {
+      position: relative;
+      cursor: pointer;
+
+      .profileImage {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .menu {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: $white;
+        border: 1px solid $border-gray;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+
+        .menuItem {
+          background: none;
+          border: none;
+          color: $clr-blue-gray;
+          cursor: pointer;
+          font-size: 19px;
+          transition: 0.3s;
+
+          &:hover {
+            color: $clr-blue;
+          }
+        }
+      }
+    }
+  }
+}
+@include max($tablet-l){
+  .header {
+    .headerRight {
+      gap: 12px;
+    }
+  }
+}
+
+
+
+@include max($tablet-m) {
+  .header {
+    .headerRight {
+      gap: 10px;
+      padding-inline: 5px;
+    }
+  }
+}
+
+@include max($tablet-m) {
+  .headerRight .iconButton {
+    display: none;
+  }
+}
+
+@include max($tablet-s) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    &.dashboardHeader {
+      height: 220px;
+    }
+
+    .logoWrapper {
+      position: absolute;
+      top: 24px;
+      left: 20px;
+
+      &.dashboardLogo {
+        position: absolute;
+        top: 90px;
+        left: 20px;
+      }
+    }
+
+    .searchWrapper {
+      width: 100%;
+      margin: 50px auto 0;
+      justify-content: center;
+    }
+
+    .headerRight {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+} 

@@ -1,0 +1,122 @@
+@use '../../styles/variables.scss' as var;
+@use '../../styles/mixins.scss' as mixin;
+
+.pickerDiv{
+    margin: 20px;
+    padding: 20px 10px;
+    background-color: var.$white;
+    border-radius: 10px; 
+    cursor: pointer;
+    max-width: 780px;
+    width: 100%;
+
+    .dotDiv{
+        display: flex;
+        gap: 10px;
+        margin-left: 18px;
+        align-items: center;
+        
+        .dot{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #5caffc99;
+            transition: background-color 0.2s;
+        }
+
+        .active {
+            width: 10px;
+            height: 10px;
+            background-color: var.$clr-blue;
+            box-shadow: 0 0 5px 5px rgba(0, 123, 255, 0.232);
+            animation: blink 3s infinite;
+          }
+
+        .chooseHeader{
+            font-size: 16px;
+            font-weight: 600;
+            color: var.$text-primary;
+        }
+    }
+
+    .chooseDiv{
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    hr{
+      background-color: #C3D4E966;
+    }
+}
+@keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @include  mixin.max(var.$desktop-l){
+    @media (max-width: var.$desktop-l) {
+      .pickerDiv{
+        width: 100%;
+        padding: 10px 5px;
+        margin: 10px;
+        .dotDiv{
+          margin-left: 10px;
+        }
+        .chooseDiv{
+          gap: 10px;
+        }
+      }
+    }
+  }
+ 
+
+  @include  mixin.max(var.$desktop-s){
+    @media (max-width: var.$desktop-s) {
+      .pickerDiv{
+        width: 100%;
+      }
+    }
+  }
+  @include  mixin.max(var.$tablet-m){
+    @media (max-width: var.$tablet-m) {
+      .pickerDiv{
+        width: 100%;
+        padding: 8px 5px;
+      }
+    }
+  }
+
+
+  @include  mixin.max(var.$mobile-l){
+    @media (max-width: var.$mobile-l) {
+      .pickerDiv{
+        margin: 12px;
+
+        hr{
+          height: 35px;           
+          background-color: #ccc; 
+          align-self: center;
+        }
+      }
+    }
+  }
+
+ 
+  @include  mixin.max(var.$mobile-s){
+    @media (max-width: var.$mobile-s) {
+      .pickerDiv{
+        max-width: 300px;
+        margin: 10px;
+
+        .chooseDiv{
+          gap: 5px;
+        }
+      }
+    }
+  }
+ 

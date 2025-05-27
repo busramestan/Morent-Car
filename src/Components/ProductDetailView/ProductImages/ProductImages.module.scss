@@ -1,0 +1,153 @@
+@use '../../../styles/variables.scss' as vars;
+@use '../../../styles/mixins.scss' as mixins;
+
+
+
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    .bigImg {
+      width: 470px;
+      height: 350px;
+      background-size:cover ;
+      background-position: center;
+      border-radius: 10px;
+    }
+    .subImg {
+      display: flex;
+      justify-content: space-between;
+    }
+    .miniImg {
+      width: 135px;
+      background-size:cover ;
+      background-position: center;
+      border-radius: 10px;
+    }
+    .overlayText {
+      position: absolute;
+      top: 20px;
+      width: 450px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      left: 10px;
+      color: vars.$white;
+      padding: 10px;
+
+      h2 {
+        font-size: 30px;
+        font-weight: 500;
+      }
+      p {
+        font-size: 16px;
+        line-height: 25px;
+        width: 280px;
+      }
+    }
+}
+  .active {
+    border: 2px blue solid;  
+    padding: 5px;
+  }
+  
+
+// RESPONSİVENESS
+
+  @include mixins.max (vars.$tablet-l) {
+
+  .imageGallery {
+    width: 570px;
+
+    .bigImg {
+      width: 570px;
+      height: 400px;
+    }
+    .miniImg {
+      width: 170px;
+    }
+  }
+  }
+
+  @include mixins.max( vars.$tablet-s) {
+    .imageGallery {
+      width: 450px;
+      .bigImg {
+        width: 450px;
+        height: 300px;
+        }
+      .miniImg {
+        width: 140px;
+        }
+      
+      .overlayText {
+          position: absolute;
+          top: 20px;
+          gap: 10px;
+          width: auto;
+
+    
+        h2 {
+            font-size: 23px;
+            font-weight: 400;
+        }
+        p {
+            font-size: 14px;
+            line-height: 24px;
+            width: auto;
+        }
+      }  
+    }
+  
+
+  }
+
+  @include mixins.max (vars.$mobile-l) {
+    .imageGallery {
+      width: 400px;
+
+      .bigImg {
+        width: 400px;
+        height: 300px;
+      }
+      .miniImg {
+        width: 120px;
+      }
+    }
+}
+
+  @include mixins.max (vars.$mobile-m) {
+
+  .imageGallery {
+    width: 300px;
+
+      .bigImg {
+      width: 300px;
+      height: 200px;
+    }
+      .miniImg {
+      width: 90px;
+    }
+
+    .overlayText {
+      position: absolute;
+      top: 5px;
+      gap: 10px;
+      width: auto;
+
+    h2 {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    p {
+        font-size: 12px;
+        line-height: 18px;
+        width: auto;
+    }
+  } 
+  }
+
+}
+
+

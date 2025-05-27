@@ -1,0 +1,171 @@
+@use '../../styles/variables.scss' as vars;
+
+.card {
+    display: flex;
+    width: 650px;
+    margin: 30px 10px;
+    flex-direction: column;
+    gap: 25px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: vars.$white;
+
+    .title {
+        color: vars.$text-primary;
+        size: 20px;
+        font-weight: 700;
+    }
+    .mapImage{
+        width: auto;
+        height: auto;
+    }
+
+    .carDiv {
+        display: flex;
+        justify-content: space-between;
+    
+        p {
+            font-size: 16px;
+            color:vars.$clr-deep-gray;
+        }
+    
+        .carContent {
+            display: flex;
+        }
+    
+        .carTitles {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin-left: 20px;
+            h3 {
+                font-size: 27px;
+                color: vars.$text-primary;
+            }
+            p {
+                font-size: 18px;
+                font-weight: 500;
+                color: vars.$clr-deep-gray;
+            }
+        }
+    
+    
+    }
+
+    .subContent {
+        display: flex;
+        justify-content: space-between;
+    
+        .subTitle {
+            color:vars.$text-primary;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .subDesc {
+            font-size: 14px;
+            font-weight: 400;
+            color: vars.$text-secondary;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            color:vars.$text-primary;
+        }
+    
+    } 
+    
+
+}
+
+.newRangeDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0px;
+}
+
+.newPickerDiv{
+    padding: 5px;
+    margin: 7px;
+}
+.newChooseDiv {
+    display: flex;
+}
+hr.color {
+    border: 0.2px solid vars.$border-gray;
+}
+
+@media screen and (max-width: vars.$tablet-l) {
+    .card{
+        width: 480px;
+    }
+}
+@media screen and (max-width: vars.$tablet-m) {
+    .card{
+        width: 380px;
+        margin: 15px;
+
+        .title{
+            font-size: 20px;
+        }
+
+        .carDiv{
+            p{
+                font-size: 14px;
+            }
+            .carTitles{
+                h3{
+                    font-size: 20px;
+                }
+                p{
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .subContent{
+            .subTitle{
+                font-size: 18px;
+            }
+            .subDesc{
+                font-size: 12px;
+            }
+            .price{
+                font-size: 26px;
+            }
+        }
+    }
+}
+@media screen and (max-width: vars.$mobile-m) {
+    .card{
+        width: 320px;
+        padding: 15px;
+
+        .title{
+            font-size: 16px;
+        }
+
+        .carDiv{
+            p{
+                font-size: 12px;
+            }
+            .carTitles{
+                h3{
+                    font-size: 16px;
+                }
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .subContent{
+            .subTitle{
+                font-size: 16px;
+            }
+            .price{
+                font-size: 22px;
+            }
+        }
+    }
+}

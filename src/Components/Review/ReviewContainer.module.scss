@@ -1,0 +1,56 @@
+.revContainer {
+  display: flex;
+  flex-direction: column; 
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 3rem;
+  padding: 1.5rem;
+  gap: 2rem;
+  max-width: 1440px;
+  align-items: flex-start;
+}
+
+.revHeading {
+  font-size: 1.25rem;
+text-align: left;}
+
+.revHeading span {
+  margin-right: 0.75rem;
+  color: #1a202c;
+  font-family: "Plus Jakarta Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.4px;
+}
+
+.revHeading div {
+  background-color: #3563e9;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 0.125rem 0.5rem;
+  color: #fff;
+  text-align: center;
+  font-family: "Plus Jakarta Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.revButton{
+  text-align: center;
+  color: #90A3BF;
+  font-family: "Plus Jakarta Sans";
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 600;
+  width: 6rem;
+  align-self: center;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+
+

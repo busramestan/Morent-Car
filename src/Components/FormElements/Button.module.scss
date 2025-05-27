@@ -1,0 +1,19 @@
+@use '../../styles/variables' as vars;
+
+.btn{
+    border-radius: 5px;
+    color: vars.$white;
+    background-color: vars.$clr-blue;
+    border: none;
+    width: 130px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 12px 15px;
+    
+}
+.secondary{
+    font-size: 12px;
+    background-color: vars.$clr-blue;
+    font-weight: 500;
+}

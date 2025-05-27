@@ -1,0 +1,97 @@
+@use '../../styles/variables.scss' as var;
+@use '../../styles/mixins.scss' as mixin;
+
+.rentalDiv{
+    background-color: var.$white;
+    max-width: 850px;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+
+    .rentalInfoHeader{
+      font-size: 18px;
+      color: var.$text-primary;
+      padding: 15px 20px 5px 20px;
+    }
+    .rentalInfoDiv{
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 20px 15px 20px;
+    }
+    .infoSubtitle{
+        font-size: 12px;
+        color: var.$text-secondary;
+        font-weight: 400;
+    }
+    .newRangePicker{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .newChooseDiv{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+    .newLabelDiv{
+        width: 100%;
+        background-color: var.$clr-light-gray;
+        padding: 20px;
+        justify-content: space-between;
+        border-radius: 10px;
+    }
+    .newPickerDiv{
+        max-width: 800px;
+        width: 100%;
+        padding: 0;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+    }
+}
+
+  //RESPONSİVENESS
+  @include  mixin.max(var.$desktop-l){
+    @media (max-width: var.$desktop-l) {
+     .rentalDiv{
+      .newRangePicker{
+        flex-direction: row;
+        margin-left: 5px;
+      }
+      .newChooseDiv{
+       display: flex;
+       flex-direction: column;
+      }
+      
+     }
+  }
+}
+  @include  mixin.max(var.$desktop-m){
+    @media (max-width: var.$desktop-m) {
+     .rentalDiv{
+      .newRangePicker{
+        flex-direction: column;
+      }
+    
+     }
+  }
+  }
+
+  @include  mixin.max(var.$mobile-m){
+    @media (max-width: var.$mobile-m) {
+     .rentalDiv{
+      .rentalInfoDiv{
+        flex-direction: column;
+        gap: 10px;
+    }
+      
+     }
+  }
+}
+
+

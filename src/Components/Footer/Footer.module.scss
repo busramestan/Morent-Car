@@ -1,0 +1,155 @@
+@import '../../styles/variables.scss';
+.footer {
+  padding: 50px 0 60px 0;
+  
+
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    .brand {
+      flex: 1;
+
+      .brandName {
+        font-size: 24px;
+        color: #0056ff;
+        font-weight: bold;
+        margin: 10px 40px 20px ;
+      
+      }
+
+      .brandDescription {
+        font-size: 14px;
+        color: #666;
+        margin:5px 40px;
+        max-width: 250px;
+        line-height: 1.5;
+      }
+    }
+
+    .links {
+      display: flex;
+      flex: 2;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin:0 40px;
+      max-width: 100%;
+
+      .column {
+        .columnTitle {
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+
+        ul {
+          list-style: none;
+          padding: 0;
+          font-size: 14px;
+          color: #666;
+
+          li {
+            margin-bottom: 15px; 
+          }
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    width: calc(100% - 50px);
+    margin: 0 auto;
+
+    .footerText {
+      font-weight: bold;
+      gap:50px;
+      
+    }
+
+    .footerLinks {
+      font-weight: bold;
+      gap:100px;
+      display: flex;
+
+      .linkItem {
+        font-weight: normal;
+        color: #666;
+        font-weight: bold;
+        
+      }
+    }
+  }
+}
+
+@media (max-width: $tablet-s) {
+  .footer {
+    padding: 30px 0px 14px 0;
+  }
+  
+  .footerContent {
+    font-size: 12px;
+    flex-direction: column;
+  }
+  
+  .brand {
+    width: 100%;
+  }
+  
+  .links {
+    display: flex;
+    width: 50%;
+    height: 500px;
+
+    .column {
+      .columnTitle {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .footerBottom {
+    gap: 32px;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    font-size: 12px;
+  }
+
+  .footerLinks {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: $mobile-m) {
+  .footerContent .brand .brandName {
+    font-size: 18px;
+  }
+
+  .footerContent .brand .brandDescription {
+    font-size: 12px;
+  }
+
+  .footerContent .links .column .columnTitle {
+    font-size: 12px;
+  }
+
+  .footerBottom {
+    font-size: 12px;
+  }
+
+  .footer {
+    padding: 20px 0 30px 0;
+  }
+}

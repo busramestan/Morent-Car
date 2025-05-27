@@ -1,0 +1,150 @@
+@use '../../styles/variables.scss' as variables;
+@use '../../styles/mixins.scss' as mixins;
+
+.recentCar {
+    padding: 20px;
+    background-color: variables.$clr-light-gray;
+    border-radius: 10px;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: variables.$text-primary;
+        }
+
+        .viewAll {
+            font-size: 14px;
+            font-weight: 600;
+            color: variables.$clr-blue;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                color: variables.$clr-deep-blue;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .carouselWrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .cardsContainer {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 15px;
+            padding: 10px;
+            scrollbar-width: none; // Firefox için
+            -ms-overflow-style: none; // IE10+ için
+        }
+
+        .cardsContainer::-webkit-scrollbar {
+            display: none; // Chrome, Safari, Edge için
+        }
+
+        .scrollButton {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            &.left {
+                left: 10px; // Ekranın sol kenarına yakın
+            }
+
+            &.right {
+                right: 10px; // Ekranın sağ kenarına yakın
+            }
+        }
+    }
+}
+
+// RESPONSİVE TASARIM
+@include mixins.max(variables.$tablet-m) {
+    .recentCar {
+        padding: 15px;
+
+        .header {
+            h2 {
+                font-size: 18px;
+            }
+
+            .viewAll {
+                font-size: 12px;
+            }
+        }
+
+        .carouselWrapper {
+            .scrollButton {
+                width: 35px;
+                height: 35px;
+
+                &.left {
+                    left: 5px;
+                }
+
+                &.right {
+                    right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@include mixins.max(variables.$mobile-m) {
+    .recentCar {
+        padding: 10px;
+
+        .header {
+            h2 {
+                font-size: 16px;
+            }
+
+            .viewAll {
+                font-size: 10px;
+            }
+        }
+
+        .carouselWrapper {
+            .scrollButton {
+                width: 30px;
+                height: 30px;
+
+                &.left {
+                    left: 0;
+                }
+
+                &.right {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
