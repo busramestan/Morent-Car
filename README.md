@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Morent Car Rental Project
 
-## Getting Started
+Morent is a modern and user-friendly web application that allows users to easily browse and rent various cars. The project is built with **Next.js** and **React**, providing a fast, secure, and SEO-friendly platform for car rental services. All pages are fully responsive, ensuring seamless experience on mobile, tablet, and desktop devices.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Car list and detail pages
+- Price, discount, review, and rating information
+- Recent and recommended cars section
+- Billing and payment info form
+- Advanced filtering and search options
+- **Admin dashboard** for management (add/edit/delete cars, manage users and reservations, view statistics)
+- Responsive design for mobile, tablet, and desktop
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technologies Used
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Next.js:** Server-side rendering (SSR) and static site generation (SSG) for fast and SEO-friendly pages
+- **React:** Component-based architecture for dynamic and reusable interfaces
+- **Styled Components:** Modern and flexible styling
+- **API Integration:** Next.js API routes for car and user data
+- **Responsive Design:** Media queries and flexible grid system
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/busramestan/Morent-Car.git
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the project:
+   ```sh
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## Screenshots
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Mobile View
+![Mobile View](src/images/iPhone-13-PRO-localhost.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tablet View
+![Tablet View](src/images/Galaxy-Fold2-localhost.png)
 
-## Deploy on Vercel
+### Desktop View
+![Desktop View](src/images/Macbook-Air-localhost.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
